@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "vF9BnrCA6OBCo2VvzCJydgFItWKstFAaCY0XxpGF3WE=",
+  "Source": "Api.Reservation",
+  "BasePath": "_content/Api.Reservation",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,9 @@
+Pour le microservice de gestion des vols :
+
+Docker compose avec 2 services : 
+- API : 
+    framework utilisé : nestjs ou node js
+- base de données utilisé : une image Docker mongo db
+
+
+

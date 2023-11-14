@@ -1,0 +1,49 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+  flight_manager:
+    container_name: flight_manager
+    build:
+      context: flights_manager/flights_manager/
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    restart: always
+    ports:
+      - 8081:8081
+
+  booking_users:
+    build:
+      context: booking/
+    ports:
+      - "11769:80"
+    depends_on:
+      - mysql
+      
+  mysql:
+    image: mysql:8.0.31-debian
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_USERNAME: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mrp
+    ports:
+      - 3306:3306
+    volumes:
+    - mysql-data:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  mysql-data:
